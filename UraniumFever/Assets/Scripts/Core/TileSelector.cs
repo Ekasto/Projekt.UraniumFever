@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace UraniumFever.Core
 {
     /// <summary>
-    /// Handles tile selection and highlighting via mouse interaction.
+    /// Handles tile selection and highlighting via mouse interaction using new Input System.
     /// </summary>
     public class TileSelector : MonoBehaviour
     {
@@ -36,7 +37,10 @@ namespace UraniumFever.Core
 
         private void HandleHover()
         {
-            Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
+            if (Mouse.current == null) return;
+
+            Vector2 mousePos = Mouse.current.position.ReadValue();
+            Ray ray = _camera.ScreenPointToRay(mousePos);
             RaycastHit hit;
 
             GameObject newHoveredTile = null;
@@ -72,7 +76,7 @@ namespace UraniumFever.Core
 
         private void HandleSelection()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
             {
                 if (_hoveredTile != null)
                 {

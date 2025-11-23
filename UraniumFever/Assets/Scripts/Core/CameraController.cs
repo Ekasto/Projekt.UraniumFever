@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace UraniumFever.Core
 {
     /// <summary>
-    /// Controls camera movement for viewing the game board.
+    /// Controls camera movement for viewing the game board using new Input System.
     /// </summary>
     public class CameraController : MonoBehaviour
     {
@@ -13,7 +14,7 @@ namespace UraniumFever.Core
         [SerializeField] private Vector2 panLimitZ = new Vector2(-10f, 10f);
 
         [Header("Zoom Settings")]
-        [SerializeField] private float zoomSpeed = 5f;
+        [SerializeField] private float zoomSpeed = 2f;
         [SerializeField] private float minZoom = 5f;
         [SerializeField] private float maxZoom = 20f;
 
@@ -21,7 +22,6 @@ namespace UraniumFever.Core
         [SerializeField] private float rotateSpeed = 100f;
 
         private Camera _camera;
-        private Vector3 _lastMousePosition;
         private float _currentZoom = 10f;
 
         private void Start()
@@ -46,22 +46,17 @@ namespace UraniumFever.Core
         {
             Vector3 movement = Vector3.zero;
 
-            // WASD or Arrow Keys
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-                movement += transform.forward;
-            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-                movement -= transform.forward;
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-                movement -= transform.right;
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-                movement += transform.right;
-
-            // Middle mouse button drag
-            if (Input.GetMouseButton(2))
+            // WASD keyboard input
+            if (Keyboard.current != null)
             {
-                Vector3 delta = _lastMousePosition - Input.mousePosition;
-                Vector3 direction = transform.right * delta.x + transform.forward * delta.y;
-                movement += direction * 0.01f;
+                if (Keyboard.current.wKey.isPressed)
+                    movement += transform.forward;
+                if (Keyboard.current.sKey.isPressed)
+                    movement -= transform.forward;
+                if (Keyboard.current.aKey.isPressed)
+                    movement -= transform.right;
+                if (Keyboard.current.dKey.isPressed)
+                    movement += transform.right;
             }
 
             if (movement != Vector3.zero)
@@ -75,40 +70,37 @@ namespace UraniumFever.Core
 
                 transform.position = newPosition;
             }
-
-            _lastMousePosition = Input.mousePosition;
         }
 
         private void HandleZoom()
         {
-            float scroll = Input.GetAxis("Mouse ScrollWheel");
-
-            if (scroll != 0)
+            if (Mouse.current != null)
             {
-                _currentZoom -= scroll * zoomSpeed;
-                _currentZoom = Mathf.Clamp(_currentZoom, minZoom, maxZoom);
+                float scroll = Mouse.current.scroll.ReadValue().y;
 
-                Vector3 newPosition = transform.position;
-                newPosition.y = _currentZoom;
-                transform.position = newPosition;
+                if (scroll != 0)
+                {
+                    _currentZoom -= scroll * zoomSpeed * Time.deltaTime;
+                    _currentZoom = Mathf.Clamp(_currentZoom, minZoom, maxZoom);
+
+                    Vector3 newPosition = transform.position;
+                    newPosition.y = _currentZoom;
+                    transform.position = newPosition;
+                }
             }
         }
 
         private void HandleRotate()
         {
-            // Q and E keys to rotate
             float rotation = 0f;
 
-            if (Input.GetKey(KeyCode.Q))
-                rotation = 1f;
-            if (Input.GetKey(KeyCode.E))
-                rotation = -1f;
-
-            // Right mouse button drag to rotate
-            if (Input.GetMouseButton(1))
+            // Q and E keys to rotate
+            if (Keyboard.current != null)
             {
-                float delta = Input.GetAxis("Mouse X");
-                rotation = -delta;
+                if (Keyboard.current.qKey.isPressed)
+                    rotation = 1f;
+                if (Keyboard.current.eKey.isPressed)
+                    rotation = -1f;
             }
 
             if (rotation != 0f)
