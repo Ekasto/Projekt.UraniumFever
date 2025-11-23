@@ -1,30 +1,112 @@
 Regeln Version 1
 
 
+=== SPIELBRETT ===
 Spielbrett mit verschiedenen Start Basen. 3 8x8 Spielbrett. 3 Basen.
+
+Vorschlag-Idee:
+- Umzug von 3 Brettern auf 1 Brett, aber getrennte Inventare
+- Umerzand Handel
+
+
+=== RESSOURCEN SYSTEM ===
+Ressourcen: Strom, Nahrung, Medizin, Players Choice
 
 Ressourcen durch Karten jede Runde. Man zieht eine Karte.
 Man kann nur die Ressourcen benutzen, die zur Basis passen. Andere Ressourcen will man zu mitspielenden bringen.
 
-Verteidigung, Fabriken, Research, Autos/Zerstörte Autos, Brücke, Autobahn, 
+Vorschlag-Idee:
+- Immer nur eine sekundäre Ressource + X primäre Ressource pro Bauwerk
+- Keine gesamte Karte verzwicken, sondern einfach Ressourcen
+- Von einer Ressourcenart beliebig viel IR verschiedener pro Auto
+- Die selbst zugeteilte Ressource
+- Vom Kartenpaket weg (= die Ressourcen)
+- Öfter neu mischen
 
+
+=== GEBÄUDE UND BAUKOSTEN ===
+Verteidigung, Fabriken, Research, Autos/Zerstörte Autos, Brücke, Autobahn
+
+Bauen: In jedem Bereich muss deine eigene Ressource da sein
+
+Straßen/Brücken: 4-5 Ressourcen
+→ Darunter primär
+
+Research: 6
+→ 4 primär
+
+Verteidigung: 8
+→ 5 primär
+
+Fabrik: 3
+→ 2 primär
+→ Ressourcenverlust
+→ +2 Würfelaugen
+
+Haus: 5
+→ 4 oder (5x Zerstörung)
+→ Alle Ressourcen verloren
+(unter 1x ziehen, Baum)
+
+Haus: 12
+→ 1 primär
+
+Autos: 1 Karte oder 1 Wechselgeld
+
+Kaputtes Auto: 4-5
+→ 3
+→ Muss immer zuerst fahren
+
+Funktion: Auto braucht 2 Runden
+(Idee: Auto leer kostet 1 Runde?)
+
+Kaputtes Auto im äußeren Rand
+
+In jeder Stufe ein Gebäude
+
+Pilot: wird gezählt
+→ Wie viel Runden darunter machen kannst
+→ Auch Autos
+
+
+=== KATASTROPHEN UND MONSTER ===
 Unter den Karten können nach 3 Runden auch Katastrophen Karten festlegen.
 
-Katastrophen: 
-Erdbeben = Zersört Brücken
+Monster aus Katastrophen → zerstören z.B. Brücken/Straßen o. anderes
+
+Katastrophen Regel-Entwurf:
+Erdbeben = Zerstört Straßen/Brücken
 Flut = Blockiert
-Tornado = Zerstört Häuser
-Dieb = Stiehlt ressourcen
+Tornado = Zerstört Gebäude
+Dieb = Stiehlt Ressourcen
+Esel (Joker) = Zerstört Gebäude
 
-Stadt fällt, alle Ressourcen weg.
-
-Ressourcen: Strom, Nahrung, Medizin, Players Choice 
-
-Esel = Zerstört Gebäude
-Wenn Esel gezogen wird, muss jeder einmal würfeln.
-
-Je nach Würfel wurf verschieden krass.
-
-1+2 = Eine 
+Zerstörung nach Würfel:
+1+2 = Eine
 3+4 = Zwei
 5+6 = Drei
+
+Vorschlag-Idee:
+- Katastrophen Karten eindämmen?
+- Etwas gegen die Katastrophen tun/vorbeugen → Datum?
+- Ereignisse sollten nicht nur aushalten lassen
+  → Würfel lieber dazu einsetzen, was zerstört wird
+  → z.B. 1-4 bei 2 müssen 2 Bauwerke zerstört werden
+  → Große Katastrophe → höherwertige Gebäude
+- Idee: Bei Tornado dauerhaft zerstört; bei Flut kann repariert werden
+- Events interessanter: jede eigenes Haus → Bereich werden blockiert
+
+
+=== SPIEL ENDE ===
+Stadt fällt, alle Ressourcen weg.
+
+Ende im Blick behalten → wie entscheidet sich Gewinn nach X Runden
+→ z.B. nach Runde 10 = loose
+→ ja nach Erfahrungsstand der Spieler
+
+
+=== PROBLEME ZU LÖSEN ===
+- Bestreitet wie aus 1 Karte ziehen → too slow
+- Karten zu unvollständig für die Ressourcen
+- Problem beim Sterben → wie brinnen wir es ausgemessen?
+- Zu viel "reparieren"
