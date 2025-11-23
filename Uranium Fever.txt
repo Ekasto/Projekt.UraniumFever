@@ -1,0 +1,30 @@
+Regeln Version 1
+
+
+Spielbrett mit verschiedenen Start Basen. 3 8x8 Spielbrett. 3 Basen.
+
+Ressourcen durch Karten jede Runde. Man zieht eine Karte.
+Man kann nur die Ressourcen benutzen, die zur Basis passen. Andere Ressourcen will man zu mitspielenden bringen.
+
+Verteidigung, Fabriken, Research, Autos/Zerstörte Autos, Brücke, Autobahn, 
+
+Unter den Karten können nach 3 Runden auch Katastrophen Karten festlegen.
+
+Katastrophen: 
+Erdbeben = Zersört Brücken
+Flut = Blockiert
+Tornado = Zerstört Häuser
+Dieb = Stiehlt ressourcen
+
+Stadt fällt, alle Ressourcen weg.
+
+Ressourcen: Strom, Nahrung, Medizin, Players Choice 
+
+Esel = Zerstört Gebäude
+Wenn Esel gezogen wird, muss jeder einmal würfeln.
+
+Je nach Würfel wurf verschieden krass.
+
+1+2 = Eine 
+3+4 = Zwei
+5+6 = Drei
