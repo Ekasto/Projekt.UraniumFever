@@ -2,7 +2,8 @@
     "name": "UraniumFever",
     "rootNamespace": "UraniumFever",
     "references": [
-        "Unity.InputSystem"
+        "Unity.InputSystem",
+        "Unity.TextMeshPro"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
