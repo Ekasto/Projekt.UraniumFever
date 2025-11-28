@@ -17,6 +17,10 @@ namespace UraniumFever.UI
         [SerializeField] private TextMeshProUGUI[] playerInventoryTexts; // 3 text fields for 3 players
         [SerializeField] private TextMeshProUGUI deckInfoText;
 
+        [Header("UI Styling")]
+        [SerializeField] private bool useColoredText = true;
+        [SerializeField] private bool showResourceIcons = true;
+
         private void Start()
         {
             if (drawCardButton != null)
@@ -43,6 +47,7 @@ namespace UraniumFever.UI
                 return;
 
             var setup = gameManager.GameSetup;
+            var currentPlayer = setup.GetCurrentPlayer();
 
             // Update round
             if (roundText != null)
@@ -54,7 +59,6 @@ namespace UraniumFever.UI
             // Update current player
             if (currentPlayerText != null)
             {
-                var currentPlayer = setup.GetCurrentPlayer();
                 currentPlayerText.text = $"Current Player: {currentPlayer.PlayerId} ({currentPlayer.HQType})";
             }
 
@@ -64,11 +68,9 @@ namespace UraniumFever.UI
                 for (int i = 0; i < setup.Players.Length; i++)
                 {
                     var player = setup.Players[i];
-                    var text = $"Player {player.PlayerId} ({player.HQType}):\n";
-                    text += $"⚡{player.GetResourceCount(Game.ResourceType.Electricity)} ";
-                    text += $"🍎{player.GetResourceCount(Game.ResourceType.Food)} ";
-                    text += $"💊{player.GetResourceCount(Game.ResourceType.Medicine)} ";
-                    text += $"⭐{player.GetResourceCount(Game.ResourceType.PlayerChoice)}";
+                    bool isCurrentPlayer = player.PlayerId == currentPlayer.PlayerId;
+
+                    string text = FormatPlayerInventory(player, isCurrentPlayer);
 
                     if (playerInventoryTexts[i] != null)
                     {
@@ -80,7 +82,66 @@ namespace UraniumFever.UI
             // Update deck info
             if (deckInfoText != null)
             {
-                deckInfoText.text = $"Deck: {setup.Deck.RemainingCards} cards | Discard: {setup.Deck.DiscardedCards}";
+                deckInfoText.text = $"<b>Deck:</b> {setup.Deck.RemainingCards} cards  |  <b>Discard:</b> {setup.Deck.DiscardedCards}";
+            }
+        }
+
+        private string FormatPlayerInventory(Game.Player player, bool isCurrentPlayer)
+        {
+            string headerColor = isCurrentPlayer ? "yellow" : "white";
+            string text = $"<color={headerColor}><b>Player {player.PlayerId}</b> ({player.HQType})</color>\n";
+
+            text += "<size=90%>"; // Slightly smaller resource text
+
+            if (showResourceIcons)
+            {
+                text += FormatResourceLine("⚡", "Electricity", Game.ResourceType.Electricity, player);
+                text += FormatResourceLine("🍎", "Food", Game.ResourceType.Food, player);
+                text += FormatResourceLine("💊", "Medicine", Game.ResourceType.Medicine, player);
+                text += FormatResourceLine("⭐", "Choice", Game.ResourceType.PlayerChoice, player);
+            }
+            else
+            {
+                text += $"Electricity: {player.GetResourceCount(Game.ResourceType.Electricity)}\n";
+                text += $"Food: {player.GetResourceCount(Game.ResourceType.Food)}\n";
+                text += $"Medicine: {player.GetResourceCount(Game.ResourceType.Medicine)}\n";
+                text += $"Choice: {player.GetResourceCount(Game.ResourceType.PlayerChoice)}";
+            }
+
+            text += "</size>";
+
+            return text;
+        }
+
+        private string FormatResourceLine(string icon, string name, Game.ResourceType resourceType, Game.Player player)
+        {
+            int count = player.GetResourceCount(resourceType);
+            string colorHex = GetResourceColorHex(resourceType);
+
+            if (useColoredText)
+            {
+                return $"<color={colorHex}>{icon} {name}:</color> <b>{count}</b>\n";
+            }
+            else
+            {
+                return $"{icon} {name}: {count}\n";
+            }
+        }
+
+        private string GetResourceColorHex(Game.ResourceType resourceType)
+        {
+            switch (resourceType)
+            {
+                case Game.ResourceType.Electricity:
+                    return "#FFE800"; // Bright yellow
+                case Game.ResourceType.Food:
+                    return "#44FF44"; // Bright green
+                case Game.ResourceType.Medicine:
+                    return "#FF4444"; // Bright red
+                case Game.ResourceType.PlayerChoice:
+                    return "#BB88FF"; // Purple
+                default:
+                    return "#FFFFFF"; // White
             }
         }
     }

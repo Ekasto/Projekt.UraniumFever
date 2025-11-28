@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "UnityMCP": {
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "C:\\Users\\ekast\\AppData\\Local\\UnityMCP\\UnityMcpServer\\src",
+        "server.py"
+      ]
+    }
+  }
+}

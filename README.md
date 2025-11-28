@@ -8,7 +8,7 @@ Uranium Fever is a resource management and trading game where players compete to
 
 ### Core Mechanics
 
-- **3 Game Boards**: Three separate 8x8 boards with different starting bases
+- **3 Game Boards**: Three separate 12x12 boards with different starting bases
 - **Resource Management**: Draw resource cards each round and deliver them to matching bases
 - **Trading System**: Exchange mismatched resources with other players
 - **Disaster Events**: Random catastrophes that affect gameplay after round 3

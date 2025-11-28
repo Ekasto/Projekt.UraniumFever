@@ -1,112 +1,162 @@
-Regeln Version 1
+Regeln Version 2 - Neue Vision
 
 
 === SPIELBRETT ===
-Spielbrett mit verschiedenen Start Basen. 3 8x8 Spielbrett. 3 Basen.
-
-Vorschlag-Idee:
-- Umzug von 3 Brettern auf 1 Brett, aber getrennte Inventare
-- Umerzand Handel
+**ENTSCHEIDUNG: Ein gemeinsames 12x12 Spielbrett**
+- Einzelnes großes Spielfeld für alle Spieler
+- Jeder Spieler hat separate Inventare (Ressourcen-Tracking)
+- Gemeinsames Board ermöglicht direktere Interaktion und Handel
+- Strategische Platzierung von Gebäuden wichtiger
 
 
 === RESSOURCEN SYSTEM ===
-Ressourcen: Strom, Nahrung, Medizin, Players Choice
+**4 Ressourcentypen:**
+1. Electricity (Strom)
+2. Food (Nahrung)
+3. Medicine (Medizin)
+4. PlayerChoice (Spieler Wahl)
 
-Ressourcen durch Karten jede Runde. Man zieht eine Karte.
-Man kann nur die Ressourcen benutzen, die zur Basis passen. Andere Ressourcen will man zu mitspielenden bringen.
-
-Vorschlag-Idee:
-- Immer nur eine sekundäre Ressource + X primäre Ressource pro Bauwerk
-- Keine gesamte Karte verzwicken, sondern einfach Ressourcen
-- Von einer Ressourcenart beliebig viel IR verschiedener pro Auto
-- Die selbst zugeteilte Ressource
-- Vom Kartenpaket weg (= die Ressourcen)
-- Öfter neu mischen
+**Mechanik:**
+- Kartenbasiertes Ziehsystem jede Runde
+- Karten werden in Deck gemischt und gezogen
+- Spieler sammeln Ressourcen in separaten Inventaren
+- Ressourcen können gehandelt werden zwischen Spielern
+- Primäre vs. Sekundäre Ressourcen für Baukosten
+- Deck wird bei Bedarf neu gemischt
 
 
 === GEBÄUDE UND BAUKOSTEN ===
-Verteidigung, Fabriken, Research, Autos/Zerstörte Autos, Brücke, Autobahn
+**Gebäudetypen:**
+1. Defense (Verteidigung)
+2. Factory (Fabrik)
+3. Research (Forschung)
+4. Road (Straße)
+5. Bridge (Brücke)
+6. House (Haus/HQ)
 
-Bauen: In jedem Bereich muss deine eigene Ressource da sein
+**Baukosten-System:**
+Jedes Gebäude benötigt:
+- Primäre Ressourcen (Hauptressource des Spielers)
+- Sekundäre Ressourcen (andere Typen)
 
-Straßen/Brücken: 4-5 Ressourcen
-→ Darunter primär
+**Spezifische Kosten:**
 
-Research: 6
-→ 4 primär
+Bridge/Road (Brücke/Straße):
+- 4-5 Ressourcen gesamt
+- Davon primär
 
-Verteidigung: 8
-→ 5 primär
+Research (Forschung):
+- 6 Ressourcen gesamt
+- 4 davon primär
 
-Fabrik: 3
-→ 2 primär
-→ Ressourcenverlust
-→ +2 Würfelaugen
+Defense (Verteidigung):
+- 8 Ressourcen gesamt
+- 5 davon primär
 
-Haus: 5
-→ 4 oder (5x Zerstörung)
-→ Alle Ressourcen verloren
-(unter 1x ziehen, Baum)
+Factory (Fabrik):
+- 3 Ressourcen gesamt
+- 2 davon primär
+- Spezial: Ressourcenverlust möglich
+- Bonus: +2 Würfelaugen
 
-Haus: 12
-→ 1 primär
+House/HQ (Haus/Hauptquartier):
+- 5 Ressourcen gesamt
+- 4 davon primär
+- KRITISCH: Bei Zerstörung → alle Ressourcen verloren
+- Stadt-Fall-Bedingung
 
-Autos: 1 Karte oder 1 Wechselgeld
-
-Kaputtes Auto: 4-5
-→ 3
-→ Muss immer zuerst fahren
-
-Funktion: Auto braucht 2 Runden
-(Idee: Auto leer kostet 1 Runde?)
-
-Kaputtes Auto im äußeren Rand
-
-In jeder Stufe ein Gebäude
-
-Pilot: wird gezählt
-→ Wie viel Runden darunter machen kannst
-→ Auch Autos
-
-
-=== KATASTROPHEN UND MONSTER ===
-Unter den Karten können nach 3 Runden auch Katastrophen Karten festlegen.
-
-Monster aus Katastrophen → zerstören z.B. Brücken/Straßen o. anderes
-
-Katastrophen Regel-Entwurf:
-Erdbeben = Zerstört Straßen/Brücken
-Flut = Blockiert
-Tornado = Zerstört Gebäude
-Dieb = Stiehlt Ressourcen
-Esel (Joker) = Zerstört Gebäude
-
-Zerstörung nach Würfel:
-1+2 = Eine
-3+4 = Zwei
-5+6 = Drei
-
-Vorschlag-Idee:
-- Katastrophen Karten eindämmen?
-- Etwas gegen die Katastrophen tun/vorbeugen → Datum?
-- Ereignisse sollten nicht nur aushalten lassen
-  → Würfel lieber dazu einsetzen, was zerstört wird
-  → z.B. 1-4 bei 2 müssen 2 Bauwerke zerstört werden
-  → Große Katastrophe → höherwertige Gebäude
-- Idee: Bei Tornado dauerhaft zerstört; bei Flut kann repariert werden
-- Events interessanter: jede eigenes Haus → Bereich werden blockiert
+**Autos (Transport):**
+- Normale Autos: 1 Ressource
+- Kaputte Autos: 4-5 Ressourcen (3 primär)
+- Auto benötigt 2 Runden für Transport
+- Kaputte Autos müssen zuerst repariert werden
 
 
-=== SPIEL ENDE ===
-Stadt fällt, alle Ressourcen weg.
+=== KATASTROPHEN SYSTEM ===
+**TIMING: Katastrophen beginnen nach Runde 3**
 
-Ende im Blick behalten → wie entscheidet sich Gewinn nach X Runden
-→ z.B. nach Runde 10 = loose
-→ ja nach Erfahrungsstand der Spieler
+**5 Katastrophen-Typen:**
+
+1. **Earthquake (Erdbeben)**
+   - Zerstört Brücken und Straßen
+   - Unterbricht Transportwege
+
+2. **Flood (Flut)**
+   - Blockiert Bereiche temporär
+   - Kann repariert werden (vs. permanente Zerstörung)
+
+3. **Tornado**
+   - Zerstört Gebäude
+   - PERMANENT (nicht reparierbar)
+   - Trifft höherwertige Gebäude schwerer
+
+4. **Thief (Dieb)**
+   - Stiehlt Ressourcen aus Inventar
+   - Direkte Ressourcenverluste
+
+5. **Donkey Card (Esel/Joker)**
+   - Alle Spieler müssen würfeln
+   - Würfelergebnis bestimmt Zerstörung
+
+**Würfel-Zerstörungs-Mechanik:**
+- 1-2: Ein Gebäude zerstört
+- 3-4: Zwei Gebäude zerstört
+- 5-6: Drei Gebäude zerstört
+
+**Verteidigung gegen Katastrophen:**
+- Defense-Gebäude können Katastrophen abwehren/reduzieren
+- Research kann Vorhersage/Vorbereitung ermöglichen
+- Strategische Platzierung wichtig
 
 
-=== PROBLEME ZU LÖSEN ===
-- Bestreitet wie aus 1 Karte ziehen → too slow
-- Karten zu unvollständig für die Ressourcen
-- Problem beim Sterben → wie brinnen wir es ausgemessen?
-- Zu viel "reparieren"
+=== GEWINN/VERLUST BEDINGUNGEN ===
+
+**Verlust-Bedingungen:**
+- Stadt/HQ fällt → alle Ressourcen verloren
+- Alle Gebäude eines Spielers zerstört
+- Rundenbasierte Zeitlimit (z.B. Runde 10)
+- Anpassbar nach Spieler-Erfahrung
+
+**Gewinn-Bedingungen:**
+- Überleben bis Ende der festgelegten Runden
+- Meiste Ressourcen/Gebäude bei Spielende
+- Erfüllung von Siegbedingungen (noch zu definieren)
+
+
+=== AKTUELLE ENTWICKLUNGSPHASE ===
+
+**Implementiert (Phase 1-3):**
+✅ Unity Projekt mit TDD Infrastructure
+✅ Grid System (12x12 Board)
+✅ Resource System (Karten, Deck, Inventar)
+✅ Tile Selection und Visualisierung
+✅ Camera Controls
+
+**In Entwicklung:**
+🎯 Building System (Platzierung, Kosten, Validierung)
+🎯 Turn Management System
+🎯 Trading System zwischen Spielern
+🎯 Disaster System (nach Runde 3)
+
+**Technologie:**
+- Unity 6 (6000.0)
+- C# mit TDD (Test-Driven Development)
+- Unity Input System
+- Universal Render Pipeline (URP)
+
+
+=== DESIGN-ENTSCHEIDUNGEN ===
+
+**Gelöste Probleme:**
+✅ Ein Board statt 3 → bessere Interaktion
+✅ Separate Inventare pro Spieler
+✅ Kartenbasiertes Ressourcensystem
+✅ Klare Gebäude-Kategorien
+
+**Zu verfeinern:**
+- Exakte Baukosten pro Gebäudetyp
+- Balance zwischen Katastrophen und Verteidigung
+- Handel-Mechaniken Details
+- Auto/Transport-System
+- Reparatur vs. permanente Zerstörung
+- Siegpunkte-System

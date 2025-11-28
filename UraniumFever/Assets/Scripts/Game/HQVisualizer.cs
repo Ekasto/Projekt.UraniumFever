@@ -26,17 +26,16 @@ namespace UraniumFever.Game
             for (int i = 0; i < players.Length; i++)
             {
                 var player = players[i];
-                var position = CalculateWorldPosition(player.HQPosition);
+                var localPosition = CalculateLocalPosition(player.HQPosition);
 
-                GameObject hqObject = CreateHQ(player.HQType, position);
+                GameObject hqObject = CreateHQ(player.HQType, gridParent, localPosition);
                 hqObject.name = $"HQ_{player.HQType}_{player.PlayerId}";
-                hqObject.transform.parent = gridParent;
 
                 _hqObjects[i] = hqObject;
             }
         }
 
-        private Vector3 CalculateWorldPosition(Vector2Int gridPos)
+        private Vector3 CalculateLocalPosition(Vector2Int gridPos)
         {
             return new Vector3(
                 gridPos.x * (tileSize + tileSpacing),
@@ -45,7 +44,7 @@ namespace UraniumFever.Game
             );
         }
 
-        private GameObject CreateHQ(ResourceType hqType, Vector3 position)
+        private GameObject CreateHQ(ResourceType hqType, Transform gridParent, Vector3 localPosition)
         {
             GameObject hqObject = null;
 
@@ -54,15 +53,15 @@ namespace UraniumFever.Game
             {
                 case ResourceType.Food:
                     if (foodHQPrefab != null)
-                        hqObject = Instantiate(foodHQPrefab, position, Quaternion.identity);
+                        hqObject = Instantiate(foodHQPrefab, gridParent);
                     break;
                 case ResourceType.Electricity:
                     if (electricityHQPrefab != null)
-                        hqObject = Instantiate(electricityHQPrefab, position, Quaternion.identity);
+                        hqObject = Instantiate(electricityHQPrefab, gridParent);
                     break;
                 case ResourceType.Medicine:
                     if (medicineHQPrefab != null)
-                        hqObject = Instantiate(medicineHQPrefab, position, Quaternion.identity);
+                        hqObject = Instantiate(medicineHQPrefab, gridParent);
                     break;
             }
 
@@ -70,7 +69,7 @@ namespace UraniumFever.Game
             if (hqObject == null)
             {
                 hqObject = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                hqObject.transform.position = position;
+                hqObject.transform.SetParent(gridParent, false); // Set parent first with worldPositionStays = false
                 hqObject.transform.localScale = new Vector3(tileSize * 0.8f, hqHeight * 2f, tileSize * 0.8f);
 
                 var renderer = hqObject.GetComponent<Renderer>();
@@ -81,6 +80,9 @@ namespace UraniumFever.Game
                     renderer.material = mat;
                 }
             }
+
+            // Set local position after parenting
+            hqObject.transform.localPosition = localPosition;
 
             return hqObject;
         }

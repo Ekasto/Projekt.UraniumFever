@@ -20,7 +20,7 @@ namespace UraniumFever.Tests
         }
 
         [Test]
-        public void GameSetup_Player1_IsFoodAtPosition0_4()
+        public void GameSetup_Player1_IsFoodAtPosition0_6()
         {
             // Arrange
             var gameSetup = new GameSetup();
@@ -32,11 +32,11 @@ namespace UraniumFever.Tests
             // Assert
             Assert.AreEqual(1, player1.PlayerId);
             Assert.AreEqual(ResourceType.Food, player1.HQType);
-            Assert.AreEqual(new Vector2Int(0, 4), player1.HQPosition);
+            Assert.AreEqual(new Vector2Int(0, 6), player1.HQPosition);
         }
 
         [Test]
-        public void GameSetup_Player2_IsElectricityAtPosition4_0()
+        public void GameSetup_Player2_IsElectricityAtPosition6_0()
         {
             // Arrange
             var gameSetup = new GameSetup();
@@ -48,11 +48,11 @@ namespace UraniumFever.Tests
             // Assert
             Assert.AreEqual(2, player2.PlayerId);
             Assert.AreEqual(ResourceType.Electricity, player2.HQType);
-            Assert.AreEqual(new Vector2Int(4, 0), player2.HQPosition);
+            Assert.AreEqual(new Vector2Int(6, 0), player2.HQPosition);
         }
 
         [Test]
-        public void GameSetup_Player3_IsMedicineAtPosition7_4()
+        public void GameSetup_Player3_IsMedicineAtPosition11_6()
         {
             // Arrange
             var gameSetup = new GameSetup();
@@ -64,7 +64,7 @@ namespace UraniumFever.Tests
             // Assert
             Assert.AreEqual(3, player3.PlayerId);
             Assert.AreEqual(ResourceType.Medicine, player3.HQType);
-            Assert.AreEqual(new Vector2Int(7, 4), player3.HQPosition);
+            Assert.AreEqual(new Vector2Int(11, 6), player3.HQPosition);
         }
 
         [Test]

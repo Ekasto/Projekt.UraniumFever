@@ -8,15 +8,15 @@ namespace UraniumFever.Core
     public class GridVisualizer : MonoBehaviour
     {
         [SerializeField] private GameObject tilePrefab;
-        [SerializeField] private int gridWidth = 8;
-        [SerializeField] private int gridHeight = 8;
+        [SerializeField] private int gridWidth = 12;
+        [SerializeField] private int gridHeight = 12;
         [SerializeField] private float tileSize = 1f;
         [SerializeField] private float tileSpacing = 0.1f;
 
         private GridManager _gridManager;
         private GameObject[,] _tileObjects;
 
-        private void Start()
+        private void Awake()
         {
             CreateVisualGrid();
         }

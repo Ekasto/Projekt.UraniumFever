@@ -78,11 +78,11 @@ This guide will help you set up the resource drawing system with headquarters an
 Press **Play** (▶)
 
 **You should see:**
-1. **Grid** from Phase 2 (8x8 checkerboard)
+1. **Grid** from Phase 2 (12x12 checkerboard)
 2. **3 colored cubes** on the grid (headquarters):
-   - Green cube at left edge (0,4) - Food HQ
-   - Yellow cube at bottom edge (4,0) - Electricity HQ
-   - Red cube at right edge (7,4) - Medicine HQ
+   - Green cube at left edge (0,6) - Food HQ
+   - Yellow cube at bottom edge (6,0) - Electricity HQ
+   - Red cube at right edge (11,6) - Medicine HQ
 3. **UI showing:**
    - "Round: 1 (SAFE)"
    - "Current Player: 1 (Food)"

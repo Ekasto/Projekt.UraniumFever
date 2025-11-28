@@ -43,7 +43,7 @@ Assets/
 ## Core Systems
 
 ### Grid System
-- **GridManager**: Manages 8x8 tile grid
+- **GridManager**: Manages 12x12 tile grid
 - **GridTile**: Individual tile data (position, occupant, state)
 - **GridVisuals**: Handles tile rendering and highlights
 

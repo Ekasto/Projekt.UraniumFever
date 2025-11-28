@@ -13,6 +13,7 @@ namespace UraniumFever.Game
         public Vector2Int HQPosition { get; private set; }
 
         private Dictionary<ResourceType, int> _inventory;
+        private HashSet<Vector2Int> _upgradedBuildings; // Buildings with HouseUpgrade (immune to earthquakes/tornadoes)
 
         public Player(int playerId, ResourceType hqType, Vector2Int hqPosition)
         {
@@ -26,6 +27,7 @@ namespace UraniumFever.Game
                 { ResourceType.Medicine, 0 },
                 { ResourceType.PlayerChoice, 0 }
             };
+            _upgradedBuildings = new HashSet<Vector2Int>();
         }
 
         public void AddResource(ResourceType type)
@@ -55,6 +57,22 @@ namespace UraniumFever.Game
                 total += count;
             }
             return total;
+        }
+
+        /// <summary>
+        /// Upgrades a building at the specified position, making it immune to earthquakes and tornadoes.
+        /// </summary>
+        public void UpgradeBuilding(Vector2Int position)
+        {
+            _upgradedBuildings.Add(position);
+        }
+
+        /// <summary>
+        /// Checks if a building at the specified position has been upgraded.
+        /// </summary>
+        public bool IsBuildingUpgraded(Vector2Int position)
+        {
+            return _upgradedBuildings.Contains(position);
         }
     }
 }

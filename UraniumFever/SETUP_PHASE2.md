@@ -5,7 +5,7 @@ This guide will help you set up the playable grid system in Unity.
 ## What We Built
 
 - ✅ **GridTile** - Data structure for individual tiles (with tests)
-- ✅ **GridManager** - Logic for creating and managing 8x8 grid (with tests)
+- ✅ **GridManager** - Logic for creating and managing 12x12 grid (with tests)
 - ✅ **GridVisualizer** - Renders the grid in Unity scene
 - ✅ **CameraController** - Navigate the board (pan, zoom, rotate)
 - ✅ **TileSelector** - Select and highlight tiles with mouse
@@ -47,7 +47,7 @@ This guide will help you set up the playable grid system in Unity.
 
 ### Step 5: Test in Play Mode
 1. Press the **Play** button (▶) in Unity
-2. You should see an 8x8 checkerboard grid!
+2. You should see a 12x12 checkerboard grid!
 
 ### Step 6: Test Controls
 
@@ -66,7 +66,7 @@ This guide will help you set up the playable grid system in Unity.
 ## Expected Result
 
 You should see:
-- An 8x8 grid of tiles (checkerboard pattern)
+- A 12x12 grid of tiles (checkerboard pattern)
 - Camera controls working smoothly
 - Tiles highlighting when hovered
 - Tiles staying selected when clicked
@@ -103,7 +103,7 @@ All tests should pass:
 - ✅ GridTile_Constructor_SetsWorldPositionCorrectly
 - ✅ GridTile_IsOccupied_DefaultsToFalse
 - ✅ GridTile_SetOccupied_UpdatesState
-- ✅ GridManager_CreateGrid_Creates8x8Grid
+- ✅ GridManager_CreateGrid_Creates12x12Grid
 - ✅ GridManager_GetTile_ReturnsCorrectTile
 - ✅ GridManager_GetTile_InvalidCoordinates_ReturnsNull
 - ✅ GridManager_IsValidPosition_ValidCoordinates_ReturnsTrue
