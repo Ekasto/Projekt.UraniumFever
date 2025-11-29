@@ -31,14 +31,53 @@ Uranium Fever is a resource management and trading game where players compete to
 
 ### Disasters
 
-- **Earthquake**: Destroys bridges
-- **Flood**: Blocks areas
-- **Tornado**: Destroys houses
-- **Thief**: Steals resources
-- **Donkey Card**: All players roll dice for building destruction
-  - Roll 1-2: One building destroyed
-  - Roll 3-4: Two buildings destroyed
-  - Roll 5-6: Three buildings destroyed
+Each disaster has a strength (1–4) and a direction (North, NorthEast, East, SouthEast, South, SouthWest, West, NorthWest).
+
+At the start of a disaster, the player who drew it first rolls to determine the direction it comes from. Then they roll to determine its strength.
+
+Tsunami:
+
+Direction: 1 = North, 2 = East, 3 = South, 4 = West
+Strength: 1 = travels 3 tiles
+Strength: 2 = 6 tiles
+Strength: 3 = 9 tiles
+Strength: 4 = 12 tiles (entire board)
+
+The tsunami moves forward one tile per round.
+
+Setup:
+the tsunami effects horizontally or vertically all tiles in a row at once
+
+Effect:
+
+All buildings and roads the tsunami hits are destroyed
+
+If one of the headquarters is hit → Game Over
+
+Thief:
+
+Direction: has no direction (the thief always appears at the player who drew the card)
+Strength: 1 = steals 2 resources chosen by the player
+Strength: 2 = steals 4 resources
+Strength: 3 = steals 6 resources
+Strength: 4 = steals 8 resources
+
+Don(k)zilla:
+
+Direction: 1 = NorhtEast, 2 = SouthEast, 3 = SouthWest, 4 = NorthWest
+Strength: 1 = 1 health
+Strength: 2 = 2 health
+Strength: 3 = 3 health
+Strength: 4 = 4 health
+
+Don(k)zilla moves each round toward the building closest to it.
+
+Effect:
+
+All buildings Don(k)zilla reaches are destroyed
+
+If one of the headquarters is hit → Game Over
+
 
 ### Win/Lose Conditions
 
