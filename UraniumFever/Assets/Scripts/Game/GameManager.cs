@@ -81,22 +81,21 @@ namespace UraniumFever.Game
                 if (card.IsResource)
                 {
                     ResourceType resourceType = card.ResourceType.Value;
+                    int cardValue = card.Value; // Use card's value instead of hardcoded 1
 
-                    // Add base resource
-                    currentPlayer.AddResource(resourceType);
-                    int baseAmount = 1;
+                    // Add base card value
+                    currentPlayer.AddResource(resourceType, cardValue);
 
                     // Apply building bonuses (Factory +4, House +1)
                     int bonus = _networkManager != null ? _networkManager.GetResourceBonus(currentPlayer, resourceType) : 0;
+                    currentPlayer.AddResource(resourceType, bonus);
 
-                    for (int b = 0; b < bonus; b++)
-                    {
-                        currentPlayer.AddResource(resourceType);
-                    }
-
-                    int totalGained = baseAmount + bonus;
+                    // Improved logging
+                    int totalGained = cardValue + bonus;
                     string bonusText = bonus > 0 ? $" (+{bonus} from network)" : "";
-                    Debug.Log($"Player {currentPlayer.PlayerId} drew {resourceType} and gained {totalGained} resources{bonusText}. Total: {currentPlayer.GetResourceCount(resourceType)}");
+                    Debug.Log($"Player {currentPlayer.PlayerId} drew {resourceType} " +
+                        $"with value {cardValue} and gained {totalGained} resources{bonusText}. " +
+                        $"Total: {currentPlayer.GetResourceCount(resourceType)}");
                 }
                 else if (card.IsDisaster)
                 {

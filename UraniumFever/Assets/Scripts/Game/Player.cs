@@ -32,7 +32,12 @@ namespace UraniumFever.Game
 
         public void AddResource(ResourceType type)
         {
-            _inventory[type]++;
+            AddResource(type, 1);
+        }
+
+        public void AddResource(ResourceType type, int amount)
+        {
+            _inventory[type] += amount;
         }
 
         public bool RemoveResource(ResourceType type, int amount = 1)

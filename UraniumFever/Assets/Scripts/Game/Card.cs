@@ -8,19 +8,21 @@ namespace UraniumFever.Game
         public CardType Type { get; private set; }
         public ResourceType? ResourceType { get; private set; }
         public DisasterType? DisasterType { get; private set; }
+        public int Value { get; private set; }
 
         public bool IsResource => Type == CardType.Resource;
         public bool IsDisaster => Type == CardType.Disaster;
 
         private Card() { }
 
-        public static Card CreateResourceCard(ResourceType resourceType)
+        public static Card CreateResourceCard(ResourceType resourceType, int value)
         {
             return new Card
             {
                 Type = CardType.Resource,
                 ResourceType = resourceType,
-                DisasterType = null
+                DisasterType = null,
+                Value = value
             };
         }
 
@@ -30,7 +32,8 @@ namespace UraniumFever.Game
             {
                 Type = CardType.Disaster,
                 ResourceType = null,
-                DisasterType = disasterType
+                DisasterType = disasterType,
+                Value = 0
             };
         }
 

@@ -9,7 +9,7 @@ namespace UraniumFever.Tests
         public void Card_CreateResourceCard_SetsTypeCorrectly()
         {
             // Arrange & Act
-            var card = Card.CreateResourceCard(ResourceType.Food);
+            var card = Card.CreateResourceCard(ResourceType.Food, 5);
 
             // Assert
             Assert.AreEqual(CardType.Resource, card.Type);
@@ -31,7 +31,7 @@ namespace UraniumFever.Tests
         public void Card_IsResource_ReturnsTrueForResourceCard()
         {
             // Arrange
-            var card = Card.CreateResourceCard(ResourceType.Electricity);
+            var card = Card.CreateResourceCard(ResourceType.Electricity, 3);
 
             // Act & Assert
             Assert.IsTrue(card.IsResource);
@@ -53,7 +53,7 @@ namespace UraniumFever.Tests
         public void Card_ToString_ResourceCard_ReturnsReadableString()
         {
             // Arrange
-            var card = Card.CreateResourceCard(ResourceType.Medicine);
+            var card = Card.CreateResourceCard(ResourceType.Medicine, 4);
 
             // Act
             var result = card.ToString();
@@ -61,6 +61,26 @@ namespace UraniumFever.Tests
             // Assert
             Assert.IsTrue(result.Contains("Resource"));
             Assert.IsTrue(result.Contains("Medicine"));
+        }
+
+        [Test]
+        public void Card_ResourceCard_HasCorrectValue()
+        {
+            // Arrange & Act
+            var card = Card.CreateResourceCard(ResourceType.Food, 7);
+
+            // Assert
+            Assert.AreEqual(7, card.Value);
+        }
+
+        [Test]
+        public void Card_DisasterCard_HasValueZero()
+        {
+            // Arrange & Act
+            var card = Card.CreateDisasterCard(DisasterType.Tornado);
+
+            // Assert
+            Assert.AreEqual(0, card.Value);
         }
 
         [Test]

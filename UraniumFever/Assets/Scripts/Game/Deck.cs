@@ -43,7 +43,8 @@ namespace UraniumFever.Game
 
                 for (int i = 0; i < count; i++)
                 {
-                    _drawPile.Add(Card.CreateResourceCard(resourceType));
+                    int randomValue = _random.Next(2, 9); // Random value from 2-8 (9 is exclusive)
+                    _drawPile.Add(Card.CreateResourceCard(resourceType, randomValue));
                 }
             }
 

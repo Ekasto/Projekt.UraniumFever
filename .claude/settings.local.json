@@ -13,7 +13,19 @@
       "mcp__UnityMCP__create_script",
       "mcp__UnityMCP__read_console",
       "Bash(git add:*)",
-      "Bash(rm:*)"
+      "Bash(git pull:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git remote:*)",
+      "Bash(git branch:*)",
+      "Bash(git status:*)",
+      "Bash(git rebase:*)",
+      "Bash(git reset:*)",
+      "Bash(rm:*)",
+      "Bash(dotnet build:*)",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []

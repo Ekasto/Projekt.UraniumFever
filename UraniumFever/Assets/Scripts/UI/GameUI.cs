@@ -26,6 +26,16 @@ namespace UraniumFever.UI
             if (drawCardButton != null)
             {
                 drawCardButton.onClick.AddListener(OnDrawCardClicked);
+                Debug.Log("GameUI: Draw card button listener added");
+            }
+            else
+            {
+                Debug.LogError("GameUI: Draw card button reference is missing! Please assign it in the Inspector.");
+            }
+
+            if (gameManager == null)
+            {
+                Debug.LogError("GameUI: GameManager reference is missing! Please assign it in the Inspector.");
             }
 
             // Initial update
@@ -34,11 +44,22 @@ namespace UraniumFever.UI
 
         private void OnDrawCardClicked()
         {
-            if (gameManager != null && gameManager.GameSetup != null)
+            Debug.Log("GameUI: Draw card button clicked!");
+
+            if (gameManager == null)
             {
-                gameManager.DrawCardForCurrentPlayer();
-                UpdateUI();
+                Debug.LogError("GameUI: Cannot draw card - gameManager is null!");
+                return;
             }
+
+            if (gameManager.GameSetup == null)
+            {
+                Debug.LogError("GameUI: Cannot draw card - GameSetup is null! Has the game initialized?");
+                return;
+            }
+
+            gameManager.DrawCardForCurrentPlayer();
+            UpdateUI();
         }
 
         private void UpdateUI()
